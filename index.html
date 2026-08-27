@@ -22,47 +22,65 @@
       color: #2c3e50;
     }
 
+    /* Animated Header & Glowing Logo */
     header {
-      background: linear-gradient(135deg, #1b4332, #2d6a4f);
+      background: linear-gradient(135deg, #0f2b1d, #1b4332, #2d6a4f);
       color: white;
       text-align: center;
-      padding: 50px 20px;
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      padding: 60px 20px 50px;
+      border-bottom-left-radius: 35px;
+      border-bottom-right-radius: 35px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
     }
 
     .brand-logo {
       font-family: 'Cinzel Decorative', serif;
-      font-size: 2.8rem;
+      font-size: 3.2rem;
       color: #d8f3dc;
-      letter-spacing: 2px;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      animation: floatLogo 3s ease-in-out infinite alternate;
-      text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+      animation: introGlow 2s ease-in-out infinite alternate, floatLogo 3s ease-in-out infinite alternate;
+      text-shadow: 0 0 15px rgba(216, 243, 220, 0.6), 2px 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes introGlow {
+      0% {
+        text-shadow: 0 0 10px rgba(216, 243, 220, 0.4), 0 0 20px rgba(64, 145, 108, 0.4);
+      }
+      100% {
+        text-shadow: 0 0 25px rgba(216, 243, 220, 0.9), 0 0 35px rgba(82, 183, 136, 0.8);
+      }
+    }
+
+    @keyframes floatLogo {
+      0% { transform: translateY(0px) scale(1); }
+      100% { transform: translateY(-8px) scale(1.02); }
     }
 
     .tagline {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: #b7e4c7;
-      margin-top: 5px;
+      margin-top: 8px;
       font-weight: 300;
+      letter-spacing: 1px;
     }
 
     .badge-container {
-      margin-top: 15px;
+      margin-top: 18px;
       display: flex;
       justify-content: center;
       gap: 15px;
     }
 
     .badge {
-      background: #40916c;
-      padding: 8px 16px;
+      background: rgba(64, 145, 108, 0.85);
+      backdrop-filter: blur(5px);
+      padding: 8px 18px;
       border-radius: 20px;
       font-size: 0.9rem;
       font-weight: 600;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border: 1px solid rgba(255,255,255,0.15);
     }
 
     .container {
@@ -74,8 +92,9 @@
     .section-title {
       font-size: 1.8rem;
       color: #1b4332;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       text-align: center;
+      font-weight: 600;
     }
 
     .food-grid {
@@ -86,20 +105,20 @@
 
     .food-card {
       background: white;
-      border-radius: 15px;
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .food-card:hover {
       transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
     }
 
     .food-img-wrapper {
       overflow: hidden;
-      height: 200px;
+      height: 210px;
     }
 
     .food-card img {
@@ -119,71 +138,172 @@
     }
 
     .food-title {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: 600;
       color: #1b4332;
     }
 
     .info-card {
       background: white;
-      border-radius: 15px;
+      border-radius: 18px;
       padding: 25px;
       margin-top: 40px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     }
 
     .info-item {
       margin-bottom: 12px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       font-size: 1rem;
     }
 
     .actions {
       display: flex;
       justify-content: center;
-      gap: 15px;
-      margin-top: 30px;
+      gap: 18px;
+      margin-top: 35px;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 14px 28px;
+      padding: 14px 30px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
     }
 
     .btn-whatsapp {
       background-color: #25d366;
       color: white;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
     }
 
     .btn-whatsapp:hover {
       background-color: #1ebd56;
-      transform: scale(1.05);
+      transform: translateY(-3px) scale(1.03);
     }
 
     .btn-menu {
       background-color: #1b4332;
       color: white;
-      box-shadow: 0 4px 12px rgba(27, 67, 50, 0.3);
+      box-shadow: 0 6px 15px rgba(27, 67, 50, 0.3);
     }
 
     .btn-menu:hover {
       background-color: #2d6a4f;
-      transform: scale(1.05);
+      transform: translateY(-3px) scale(1.03);
     }
 
-    @keyframes floatLogo {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-6px); }
+    /* Modal Styling for Taj Mahal Menu */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      width: 100%;
+      max-width: 700px;
+      max-height: 85vh;
+      border-radius: 20px;
+      overflow-y: auto;
+      padding: 30px;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      animation: modalFadeIn 0.3s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #777;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .close-btn:hover {
+      color: #1b4332;
+    }
+
+    .menu-header {
+      text-align: center;
+      border-bottom: 2px solid #e9ecef;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+    }
+
+    .menu-header h2 {
+      font-family: 'Cinzel Decorative', serif;
+      color: #1b4332;
+      font-size: 1.8rem;
+    }
+
+    .menu-header p {
+      color: #e67e22;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-top: 5px;
+    }
+
+    .menu-category-title {
+      font-size: 1.25rem;
+      color: #2d6a4f;
+      border-left: 4px solid #52b788;
+      padding-left: 10px;
+      margin: 20px 0 15px;
+      font-weight: 600;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+
+    .menu-item-name {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .menu-item-desc {
+      font-size: 0.85rem;
+      color: #7f8c8d;
+      margin-top: 2px;
+    }
+
+    .menu-item-price {
+      font-weight: 600;
+      color: #1b4332;
+      font-size: 1.05rem;
     }
   </style>
 </head>
@@ -245,9 +365,136 @@
 
     <div class="actions">
       <a href="https://wa.me/9109130303308" target="_blank" class="btn btn-whatsapp">💬 Order on WhatsApp</a>
-      <a href="https://drive.google.com" target="_blank" class="btn btn-menu">📖 View Full Menu</a>
+      <button onclick="openMenuModal()" class="btn btn-menu">📖 View Full Menu</button>
     </div>
   </div>
+
+  <!-- Taj Mahal Mumbai Inspired Full Menu Modal -->
+  <div id="menuModal" class="modal-overlay" onclick="closeMenuModal(event)">
+    <div class="modal-content">
+      <span class="close-btn" onclick="toggleModal(false)">&times;</span>
+      
+      <div class="menu-header">
+        <h2>The Terotale Grand Menu</h2>
+        <p>Inspired by The Taj Mahal Palace, Mumbai • Pure Vegetarian Signature Selection</p>
+      </div>
+
+      <!-- Starters -->
+      <div class="menu-category-title">👑 Heritage Starters</div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="menu-item-name">Royal Truffle & Cheese Paneer Tikka</div>
+          <div class="menu-item-desc">Cottage cheese marinated in Kashmiri saffron & black truffle oil</div>
+        </div>
+        <div class="menu-item-price">₹1,250</div>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <div class="menu-item-name">Subz Mewa Dahi Ke Kebab</div>
+          <div class="menu-item-desc">Hung curd kebabs stuffed with pistachios & green cardamom</div>
+        </div>
+        <div class="menu-item-price">₹1,050</div>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <div class="menu-item-name">Crispy Lotus Stem Honey Chilli</div>
+          <div class="menu-item-desc">Thinly sliced lotus root tossed with organic honey & sesame</div>
+        </div>
+        <div class="menu-item-price">₹950</div>
+      </div>
+
+      <!-- Main Course -->
+      <div class="menu-category-title">🍲 Signature Main Course</div>
+
+      <div class="menu-item">
+        <div>
+          <div class="menu-item-name">Taj Signature Dal Makhani</div>
+          <div class="menu-item-desc">Slow-cooked overnight over charcoal, finished with white butter</div>
+        </div>
+        <div class="menu-item-price">₹1,150</div>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <div class="menu-item-name">Paneer Lababdar Grand Taj</div>
+          <div class="menu-item-desc">Fresh paneer in rich tomato gravy infused with edible 24k gold leaf</div>
+        </div>
+        <div class="menu-item-price">₹1,450</div>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <div class="menu-item-name">Kashmiri Dum Aloo Guchhi</div>
+          <div class="menu-item-desc">Stuffed baby potatoes cooked with rare Himalayan Morel mushrooms</div>
+        </div>
+        <div class="menu-item-price">₹1,600</div>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <div class="menu-item-name">Avadh Subz Dum Biryani</div>
+          <div class="menu-item-desc">Fragrant Basmati rice dum-cooked in a sealed clay pot with kewra</div>
+        </div>
+        <div class="menu-item-price">₹1,200</div>
+      </div>
+
+      <!-- Breads -->
+      <div class="menu-category-title">🫓 Gourmet Breads</div>
+
+      <div class="menu-item">
+        <div>
+          <div class="menu-item-name">Saffron & Garlic Truffle Naan</div>
+        </div>
+        <div class="menu-item-price">₹350</div>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <div class="menu-item-name">Chur Chur Warqi Paratha</div>
+        </div>
+        <div class="menu-item-price">₹300</div>
+      </div>
+
+      <!-- Desserts -->
+      <div class="menu-category-title">🍨 Royal Desserts</div>
+
+      <div class="menu-item">
+        <div>
+          <div class="menu-item-name">Kesari Elachi Rasmalai</div>
+          <div class="menu-item-desc">Soft cottage cheese dumplings soaked in saffron-infused rabri</div>
+        </div>
+        <div class="menu-item-price">₹650</div>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <div class="menu-item-name">Taj Special Shahi Tukda</div>
+          <div class="menu-item-desc">Golden toasted brioche soaked in cardamom syrup with silver leaf</div>
+        </div>
+        <div class="menu-item-price">₹750</div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function openMenuModal() {
+      document.getElementById('menuModal').style.display = 'flex';
+    }
+
+    function toggleModal(show) {
+      document.getElementById('menuModal').style.display = show ? 'flex' : 'none';
+    }
+
+    function closeMenuModal(event) {
+      if (event.target.id === 'menuModal') {
+        toggleModal(false);
+      }
+    }
+  </script>
 
 </body>
 </html>
