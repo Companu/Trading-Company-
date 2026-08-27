@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Terotale - Pure Veg Restaurant</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f7f9f6;
+      color: #2c3e50;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1b4332, #2d6a4f);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .brand-logo {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2.8rem;
+      color: #d8f3dc;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: floatLogo 3s ease-in-out infinite alternate;
+      text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #b7e4c7;
+      margin-top: 5px;
+      font-weight: 300;
+    }
+
+    .badge-container {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .badge {
+      background: #40916c;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: #1b4332;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .food-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .food-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+    }
+
+    .food-img-wrapper {
+      overflow: hidden;
+      height: 200px;
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .food-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .food-info {
+      padding: 18px;
+      text-align: center;
+    }
+
+    .food-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1b4332;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      margin-top: 40px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    }
+
+    .info-item {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-whatsapp {
+      background-color: #25d366;
+      color: white;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1ebd56;
+      transform: scale(1.05);
+    }
+
+    .btn-menu {
+      background-color: #1b4332;
+      color: white;
+      box-shadow: 0 4px 12px rgba(27, 67, 50, 0.3);
+    }
+
+    .btn-menu:hover {
+      background-color: #2d6a4f;
+      transform: scale(1.05);
+    }
+
+    @keyframes floatLogo {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-6px); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand-logo">THE TEROTALE</div>
+    <p class="tagline">Pure Vegetarian Haven • Nashik</p>
+
+    <div class="badge-container">
+      <span class="badge">★ 4.7 (6.4K Reviews)</span>
+      <span class="badge">₹200–₹600 per person</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2 class="section-title">Specialities</h2>
+
+    <div class="food-grid">
+      <div class="food-card">
+        <div class="food-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=80" alt="Cheese Butter Masala">
+        </div>
+        <div class="food-info">
+          <div class="food-title">Cheese Butter Masala</div>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80" alt="Paneer Tikka">
+        </div>
+        <div class="food-info">
+          <div class="food-title">Paneer Tikka</div>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80" alt="Dal Tadka">
+        </div>
+        <div class="food-info">
+          <div class="food-title">Special Veg Thali</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-item">
+        📍 <strong>Address:</strong> Dr. Babasaheb Ambedkar Rd, opposite to City Center Mall, Parijat Nagar, Nashik, Maharashtra 422002
+      </div>
+      <div class="info-item">
+        ⏰ <strong>Timings:</strong> Open (Closes 12 AM)
+      </div>
+      <div class="info-item">
+        ✨ <strong>Features:</strong> All you can eat • Happy-hour food • Private dining room
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="https://wa.me/9109130303308" target="_blank" class="btn btn-whatsapp">💬 Order on WhatsApp</a>
+      <a href="https://drive.google.com" target="_blank" class="btn btn-menu">📖 View Full Menu</a>
+    </div>
+  </div>
+
+</body>
+</html>
