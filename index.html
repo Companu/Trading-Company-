@@ -203,6 +203,91 @@
       transform: translateY(-3px) scale(1.03);
     }
 
+    /* Rating & Review Section Styling */
+    .rating-section {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      margin-top: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .star-rating-input {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      font-size: 2rem;
+      color: #ccc;
+      cursor: pointer;
+      margin: 15px 0;
+    }
+
+    .star-rating-input .star.active {
+      color: #f39c12;
+    }
+
+    .review-form input, .review-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      outline: none;
+      font-size: 0.95rem;
+    }
+
+    .review-form input:focus, .review-form textarea:focus {
+      border-color: #2d6a4f;
+    }
+
+    .review-form button {
+      background: #1b4332;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .review-form button:hover {
+      background: #2d6a4f;
+    }
+
+    .reviews-list {
+      margin-top: 30px;
+      border-top: 2px dashed #e9ecef;
+      padding-top: 20px;
+    }
+
+    .review-card {
+      background: #f7f9f6;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 12px;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .reviewer-name {
+      font-weight: 600;
+      color: #1b4332;
+    }
+
+    .review-stars {
+      color: #f39c12;
+    }
+
+    .review-text {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
     /* Modal Styling for Taj Mahal Menu */
     .modal-overlay {
       display: none;
@@ -222,7 +307,7 @@
     .modal-content {
       background: #ffffff;
       width: 100%;
-      max-width: 700px;
+      max-width: 800px;
       max-height: 85vh;
       border-radius: 20px;
       overflow-y: auto;
@@ -277,21 +362,36 @@
       color: #2d6a4f;
       border-left: 4px solid #52b788;
       padding-left: 10px;
-      margin: 20px 0 15px;
+      margin: 25px 0 15px;
       font-weight: 600;
     }
 
-    .menu-item {
+    /* Menu Card Styling with Images */
+    .modal-food-item {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 10px 0;
+      align-items: center;
+      gap: 15px;
+      padding: 12px 0;
       border-bottom: 1px dashed #e2e8f0;
+    }
+
+    .modal-dish-img {
+      width: 75px;
+      height: 75px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    .modal-dish-details {
+      flex-grow: 1;
     }
 
     .menu-item-name {
       font-weight: 600;
       color: #2c3e50;
+      font-size: 1.05rem;
     }
 
     .menu-item-desc {
@@ -304,6 +404,7 @@
       font-weight: 600;
       color: #1b4332;
       font-size: 1.05rem;
+      white-space: nowrap;
     }
   </style>
 </head>
@@ -367,9 +468,47 @@
       <a href="https://wa.me/9109130303308" target="_blank" class="btn btn-whatsapp">💬 Order on WhatsApp</a>
       <button onclick="openMenuModal()" class="btn btn-menu">📖 View Full Menu</button>
     </div>
+
+    <!-- Rating & Customer Feedback Section -->
+    <div class="rating-section">
+      <h2 class="section-title">Rate Your Experience</h2>
+      <div class="review-form">
+        <div class="star-rating-input" id="starInput">
+          <span class="star" onclick="setRating(1)">★</span>
+          <span class="star" onclick="setRating(2)">★</span>
+          <span class="star" onclick="setRating(3)">★</span>
+          <span class="star" onclick="setRating(4)">★</span>
+          <span class="star" onclick="setRating(5)">★</span>
+        </div>
+        <input type="text" id="reviewerName" placeholder="Your Name" required>
+        <textarea id="reviewerComment" rows="3" placeholder="Write your review here..."></textarea>
+        <button onclick="submitReview()">Submit Review</button>
+      </div>
+
+      <div class="reviews-list">
+        <h3 style="color:#1b4332; margin-bottom:15px;">Recent Reviews</h3>
+        <div id="reviewsContainer">
+          <div class="review-card">
+            <div class="review-header">
+              <span class="reviewer-name">Rahul Sharma</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <div class="review-text">Amazing food and luxury ambiance! Paneer tikka is a must try.</div>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <span class="reviewer-name">Pooja Patel</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <div class="review-text">Great service and pure vegetarian options. Loved the Taj signature menu!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Taj Mahal Mumbai Inspired Full Menu Modal -->
+  <!-- Taj Mahal Mumbai Inspired Full Menu Modal with Dish Photos -->
   <div id="menuModal" class="modal-overlay" onclick="closeMenuModal(event)">
     <div class="modal-content">
       <span class="close-btn" onclick="toggleModal(false)">&times;</span>
@@ -382,24 +521,27 @@
       <!-- Starters -->
       <div class="menu-category-title">👑 Heritage Starters</div>
       
-      <div class="menu-item">
-        <div>
+      <div class="modal-food-item">
+        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=200&q=80" alt="Paneer Tikka" class="modal-dish-img">
+        <div class="modal-dish-details">
           <div class="menu-item-name">Royal Truffle & Cheese Paneer Tikka</div>
           <div class="menu-item-desc">Cottage cheese marinated in Kashmiri saffron & black truffle oil</div>
         </div>
         <div class="menu-item-price">₹1,250</div>
       </div>
 
-      <div class="menu-item">
-        <div>
+      <div class="modal-food-item">
+        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=200&q=80" alt="Dahi Kebab" class="modal-dish-img">
+        <div class="modal-dish-details">
           <div class="menu-item-name">Subz Mewa Dahi Ke Kebab</div>
           <div class="menu-item-desc">Hung curd kebabs stuffed with pistachios & green cardamom</div>
         </div>
         <div class="menu-item-price">₹1,050</div>
       </div>
 
-      <div class="menu-item">
-        <div>
+      <div class="modal-food-item">
+        <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=200&q=80" alt="Crispy Lotus" class="modal-dish-img">
+        <div class="modal-dish-details">
           <div class="menu-item-name">Crispy Lotus Stem Honey Chilli</div>
           <div class="menu-item-desc">Thinly sliced lotus root tossed with organic honey & sesame</div>
         </div>
@@ -409,32 +551,36 @@
       <!-- Main Course -->
       <div class="menu-category-title">🍲 Signature Main Course</div>
 
-      <div class="menu-item">
-        <div>
+      <div class="modal-food-item">
+        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=200&q=80" alt="Dal Makhani" class="modal-dish-img">
+        <div class="modal-dish-details">
           <div class="menu-item-name">Taj Signature Dal Makhani</div>
           <div class="menu-item-desc">Slow-cooked overnight over charcoal, finished with white butter</div>
         </div>
         <div class="menu-item-price">₹1,150</div>
       </div>
 
-      <div class="menu-item">
-        <div>
+      <div class="modal-food-item">
+        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=200&q=80" alt="Paneer Lababdar" class="modal-dish-img">
+        <div class="modal-dish-details">
           <div class="menu-item-name">Paneer Lababdar Grand Taj</div>
           <div class="menu-item-desc">Fresh paneer in rich tomato gravy infused with edible 24k gold leaf</div>
         </div>
         <div class="menu-item-price">₹1,450</div>
       </div>
 
-      <div class="menu-item">
-        <div>
+      <div class="modal-food-item">
+        <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=200&q=80" alt="Kashmiri Dum Aloo" class="modal-dish-img">
+        <div class="modal-dish-details">
           <div class="menu-item-name">Kashmiri Dum Aloo Guchhi</div>
           <div class="menu-item-desc">Stuffed baby potatoes cooked with rare Himalayan Morel mushrooms</div>
         </div>
         <div class="menu-item-price">₹1,600</div>
       </div>
 
-      <div class="menu-item">
-        <div>
+      <div class="modal-food-item">
+        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=200&q=80" alt="Veg Biryani" class="modal-dish-img">
+        <div class="modal-dish-details">
           <div class="menu-item-name">Avadh Subz Dum Biryani</div>
           <div class="menu-item-desc">Fragrant Basmati rice dum-cooked in a sealed clay pot with kewra</div>
         </div>
@@ -444,16 +590,20 @@
       <!-- Breads -->
       <div class="menu-category-title">🫓 Gourmet Breads</div>
 
-      <div class="menu-item">
-        <div>
+      <div class="modal-food-item">
+        <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=200&q=80" alt="Truffle Naan" class="modal-dish-img">
+        <div class="modal-dish-details">
           <div class="menu-item-name">Saffron & Garlic Truffle Naan</div>
+          <div class="menu-item-desc">Clay-oven cooked naan brushed with saffron and truffle butter</div>
         </div>
         <div class="menu-item-price">₹350</div>
       </div>
 
-      <div class="menu-item">
-        <div>
+      <div class="modal-food-item">
+        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=200&q=80" alt="Chur Chur Paratha" class="modal-dish-img">
+        <div class="modal-dish-details">
           <div class="menu-item-name">Chur Chur Warqi Paratha</div>
+          <div class="menu-item-desc">Layered flaky Indian flatbread crushed with ghee and herbs</div>
         </div>
         <div class="menu-item-price">₹300</div>
       </div>
@@ -461,16 +611,18 @@
       <!-- Desserts -->
       <div class="menu-category-title">🍨 Royal Desserts</div>
 
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Kesari Elachi Rasmalai</div>
+      <div class="modal-food-item">
+        <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=200&q=80" alt="Rasmalai" class="modal-dish-img">
+        <div class="modal-dish-details">
+          <div class="menu-item-name">Kesari Elaichi Rasmalai</div>
           <div class="menu-item-desc">Soft cottage cheese dumplings soaked in saffron-infused rabri</div>
         </div>
         <div class="menu-item-price">₹650</div>
       </div>
 
-      <div class="menu-item">
-        <div>
+      <div class="modal-food-item">
+        <img src="https://images.unsplash.com/photo-1605197586548-0de373809783?auto=format&fit=crop&w=200&q=80" alt="Shahi Tukda" class="modal-dish-img">
+        <div class="modal-dish-details">
           <div class="menu-item-name">Taj Special Shahi Tukda</div>
           <div class="menu-item-desc">Golden toasted brioche soaked in cardamom syrup with silver leaf</div>
         </div>
@@ -494,7 +646,32 @@
         toggleModal(false);
       }
     }
-  </script>
 
-</body>
-</html>
+    // Rating & Review Logic
+    let currentRating = 5;
+    
+    function setRating(rating) {
+      currentRating = rating;
+      const stars = document.querySelectorAll('#starInput .star');
+      stars.forEach((star, index) => {
+        if (index < rating) {
+          star.classList.add('active');
+        } else {
+          star.classList.remove('active');
+        }
+      });
+    }
+
+    setRating(5);
+
+    function submitReview() {
+      const name = document.getElementById('reviewerName').value.trim();
+      const comment = document.getElementById('reviewerComment').value.trim();
+
+      if (!name || !comment) {
+        alert('Please fill in both your name and review comment.');
+        return;
+      }
+
+      const container = document.getElementById('reviewsContainer');
+      const starString = '★'.repeat(currentRating) + '☆'.repeat(5 - cur
