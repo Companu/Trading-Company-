@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>The Terotale - Pure Veg Restaurant</title>
+  <title>The Terotale - Fine Dining Pure Veg Restaurant</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -19,236 +19,308 @@
     }
 
     body {
-      background-color: #f7f9f6;
-      color: #2c3e50;
+      background-color: #0b1d13;
+      color: #e2e8f0;
+      overflow-x: hidden;
     }
 
-    /* Header */
+    /* Animated Luxury Header */
     header {
-      background: linear-gradient(135deg, #0f2b1d, #1b4332, #2d6a4f);
+      background: linear-gradient(180deg, #05140b 0%, #0d2b1a 100%);
       color: white;
       text-align: center;
-      padding: 50px 20px 40px;
-      border-bottom-left-radius: 35px;
-      border-bottom-right-radius: 35px;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+      padding: 60px 20px 45px;
+      border-bottom: 2px solid #d4af37;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+      position: relative;
     }
 
     .brand-logo {
       font-family: 'Cinzel Decorative', serif;
-      font-size: 2.8rem;
-      color: #d8f3dc;
-      letter-spacing: 3px;
+      font-size: 3rem;
+      color: #d4af37;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      animation: introGlow 2s ease-in-out infinite alternate, floatLogo 3s ease-in-out infinite alternate;
-      text-shadow: 0 0 15px rgba(216, 243, 220, 0.6);
+      animation: logoGlow 3s ease-in-out infinite alternate, floatLogo 4s ease-in-out infinite alternate;
     }
 
-    @keyframes introGlow {
-      0% { text-shadow: 0 0 10px rgba(216, 243, 220, 0.4); }
-      100% { text-shadow: 0 0 25px rgba(216, 243, 220, 0.9); }
+    @keyframes logoGlow {
+      0% { text-shadow: 0 0 10px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.2); }
+      100% { text-shadow: 0 0 25px rgba(212, 175, 55, 0.9), 0 0 40px rgba(212, 175, 55, 0.6); }
     }
 
     @keyframes floatLogo {
       0% { transform: translateY(0px); }
-      100% { transform: translateY(-6px); }
+      100% { transform: translateY(-8px); }
     }
 
     .tagline {
-      font-size: 1rem;
-      color: #b7e4c7;
-      margin-top: 8px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #94a3b8;
+      margin-top: 10px;
     }
 
     .badge-container {
-      margin-top: 15px;
+      margin-top: 20px;
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .badge {
-      background: rgba(64, 145, 108, 0.85);
-      backdrop-filter: blur(5px);
-      padding: 6px 14px;
-      border-radius: 20px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid #d4af37;
+      color: #f1c40f;
+      padding: 7px 16px;
+      border-radius: 25px;
       font-size: 0.85rem;
-      font-weight: 600;
+      font-weight: 500;
+      backdrop-filter: blur(5px);
     }
 
     .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 15px;
+      max-width: 1050px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     .section-title {
-      font-size: 1.6rem;
-      color: #1b4332;
-      margin-bottom: 20px;
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.8rem;
+      color: #d4af37;
+      margin-bottom: 25px;
       text-align: center;
-      font-weight: 600;
+      position: relative;
     }
 
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 2px;
+      background: #d4af37;
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Food Cards Grid */
     .food-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
     .food-card {
-      background: white;
-      border-radius: 16px;
+      background: #11261a;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .food-card:hover {
+      transform: translateY(-7px);
+      border-color: #d4af37;
+      box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
     }
 
     .food-img-wrapper {
-      height: 190px;
+      height: 210px;
+      overflow: hidden;
     }
 
     .food-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .food-card:hover img {
+      transform: scale(1.08);
     }
 
     .food-info {
-      padding: 15px;
+      padding: 18px;
       text-align: center;
     }
 
     .food-title {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 600;
-      color: #1b4332;
+      color: #f8fafc;
     }
 
     .info-card {
-      background: white;
-      border-radius: 16px;
-      padding: 20px;
-      margin-top: 30px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+      background: #11261a;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 20px;
+      padding: 25px;
+      margin-top: 35px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     }
 
     .info-item {
-      margin-bottom: 10px;
-      font-size: 0.95rem;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      color: #cbd5e1;
     }
 
+    .info-item strong {
+      color: #d4af37;
+    }
+
+    /* Buttons */
     .actions {
       display: flex;
       justify-content: center;
-      gap: 15px;
-      margin-top: 30px;
+      gap: 18px;
+      margin-top: 35px;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 14px 28px;
-      border-radius: 30px;
+      padding: 15px 32px;
+      border-radius: 35px;
       text-decoration: none;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       cursor: pointer;
       border: none;
       font-size: 1rem;
       touch-action: manipulation;
+      transition: all 0.3s ease;
     }
 
     .btn-whatsapp {
-      background-color: #25d366;
+      background: linear-gradient(135deg, #25d366, #128c7e);
       color: white;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
     }
 
     .btn-menu {
-      background-color: #1b4332;
-      color: white;
+      background: linear-gradient(135deg, #d4af37, #b8860b);
+      color: #0b1d13;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-menu:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
     }
 
     /* Interactive Rating Section */
     .rating-section {
-      background: white;
-      border-radius: 16px;
-      padding: 25px 20px;
-      margin-top: 30px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+      background: #11261a;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 20px;
+      padding: 30px 25px;
+      margin-top: 40px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     }
 
     .star-rating-input {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      font-size: 2.8rem;
-      color: #ddd;
-      margin: 15px 0 20px;
+      gap: 14px;
+      font-size: 3rem;
+      color: #334155;
+      margin: 15px 0 25px;
       user-select: none;
     }
 
     .star-rating-input .star {
       cursor: pointer;
-      padding: 5px;
-      transition: transform 0.1s, color 0.1s;
+      padding: 4px;
+      transition: transform 0.2s ease, color 0.2s ease;
       touch-action: manipulation;
     }
 
     .star-rating-input .star.active {
-      color: #f39c12;
+      color: #d4af37;
+      text-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+    }
+
+    .star-rating-input .star:hover {
+      transform: scale(1.25);
     }
 
     .review-form input, .review-form textarea {
       width: 100%;
-      padding: 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
+      padding: 14px 16px;
+      background: #09170f;
+      border: 1px solid #1e3a2b;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      color: #fff;
       outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .review-form input:focus, .review-form textarea:focus {
+      border-color: #d4af37;
     }
 
     .review-form button {
       width: 100%;
-      background: #1b4332;
-      color: white;
+      background: linear-gradient(135deg, #d4af37, #b8860b);
+      color: #0b1d13;
       border: none;
-      padding: 14px;
-      border-radius: 25px;
+      padding: 15px;
+      border-radius: 30px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 1.05rem;
       cursor: pointer;
       touch-action: manipulation;
+      transition: all 0.3s ease;
+    }
+
+    .review-form button:hover {
+      opacity: 0.95;
+      transform: translateY(-2px);
     }
 
     .reviews-list {
-      margin-top: 25px;
-      border-top: 2px dashed #e2e8f0;
-      padding-top: 20px;
+      margin-top: 30px;
+      border-top: 1px dashed rgba(212, 175, 55, 0.3);
+      padding-top: 25px;
     }
 
     .review-card {
-      background: #f8fafc;
-      border-radius: 12px;
-      padding: 14px;
-      margin-bottom: 10px;
+      background: #09170f;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
     }
 
     .review-header {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .reviewer-name {
       font-weight: 600;
-      color: #1b4332;
+      color: #d4af37;
     }
 
     .review-stars {
-      color: #f39c12;
+      color: #d4af37;
       font-size: 1.1rem;
     }
 
@@ -260,72 +332,80 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(4px);
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
       z-index: 10000;
       justify-content: center;
       align-items: center;
-      padding: 15px;
+      padding: 20px;
     }
 
     .modal-content {
-      background: #ffffff;
+      background: #0d2116;
+      border: 1px solid #d4af37;
       width: 100%;
-      max-width: 750px;
+      max-width: 780px;
       max-height: 85vh;
-      border-radius: 20px;
+      border-radius: 24px;
       overflow-y: auto;
-      padding: 25px 20px;
+      padding: 30px 22px;
       position: relative;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     }
 
     .close-btn {
       position: absolute;
-      top: 12px;
-      right: 18px;
+      top: 15px;
+      right: 22px;
       font-size: 32px;
       font-weight: bold;
-      color: #333;
+      color: #d4af37;
       cursor: pointer;
       padding: 5px 10px;
+      transition: transform 0.2s;
+    }
+
+    .close-btn:hover {
+      transform: scale(1.2);
     }
 
     .menu-header {
       text-align: center;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 12px;
-      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
     }
 
     .menu-header h2 {
       font-family: 'Cinzel Decorative', serif;
-      color: #1b4332;
-      font-size: 1.5rem;
+      color: #d4af37;
+      font-size: 1.6rem;
     }
 
     .menu-category-title {
-      font-size: 1.15rem;
-      color: #2d6a4f;
-      border-left: 4px solid #52b788;
-      padding-left: 8px;
-      margin: 20px 0 12px;
+      font-size: 1.2rem;
+      color: #d4af37;
+      border-left: 4px solid #d4af37;
+      padding-left: 10px;
+      margin: 25px 0 15px;
       font-weight: 600;
     }
 
     .modal-food-item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px dashed #e2e8f0;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
     }
 
     .modal-dish-img {
-      width: 65px;
-      height: 65px;
-      border-radius: 10px;
+      width: 70px;
+      height: 70px;
+      border-radius: 12px;
       object-fit: cover;
       flex-shrink: 0;
+      border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
     .modal-dish-details {
@@ -334,19 +414,20 @@
 
     .menu-item-name {
       font-weight: 600;
-      color: #2c3e50;
-      font-size: 0.95rem;
+      color: #f8fafc;
+      font-size: 1rem;
     }
 
     .menu-item-desc {
-      font-size: 0.8rem;
-      color: #64748b;
+      font-size: 0.82rem;
+      color: #94a3b8;
+      margin-top: 3px;
     }
 
     .menu-item-price {
       font-weight: 600;
-      color: #1b4332;
-      font-size: 0.95rem;
+      color: #d4af37;
+      font-size: 1.05rem;
     }
   </style>
 </head>
@@ -354,7 +435,7 @@
 
   <header>
     <div class="brand-logo">THE TEROTALE</div>
-    <p class="tagline">Pure Vegetarian Haven • Nashik</p>
+    <p class="tagline">Pure Vegetarian Luxury • Nashik</p>
 
     <div class="badge-container">
       <span class="badge">★ 4.7 (6.4K Reviews)</span>
@@ -363,7 +444,7 @@
   </header>
 
   <div class="container">
-    <h2 class="section-title">Specialities</h2>
+    <h2 class="section-title">Chef's Specialities</h2>
 
     <div class="food-grid">
       <div class="food-card">
@@ -396,8 +477,8 @@
 
     <div class="info-card">
       <div class="info-item">📍 <strong>Address:</strong> Dr. Babasaheb Ambedkar Rd, Parijat Nagar, Nashik</div>
-      <div class="info-item">⏰ <strong>Timings:</strong> Open (Closes 12 AM)</div>
-      <div class="info-item">✨ <strong>Features:</strong> All you can eat • Happy-hour food</div>
+      <div class="info-item">⏰ <strong>Timings:</strong> Open Daily (Closes 12 AM)</div>
+      <div class="info-item">✨ <strong>Experience:</strong> Luxury Fine Dining • Family Section • Valet Parking</div>
     </div>
 
     <div class="actions">
@@ -405,7 +486,7 @@
       <button onclick="openMenuModal()" class="btn btn-menu">📖 View Full Menu</button>
     </div>
 
-    <!-- Interactive Rating & Review Section -->
+    <!-- Interactive Rating Section -->
     <div class="rating-section">
       <h2 class="section-title">Rate Your Experience</h2>
       <div class="review-form">
@@ -422,7 +503,7 @@
       </div>
 
       <div class="reviews-list">
-        <h3 style="color:#1b4332; margin-bottom:12px;">Recent Reviews</h3>
+        <h3 style="color:#d4af37; margin-bottom:15px; font-weight:500;">Recent Customer Reviews</h3>
         <div id="reviewsContainer">
           <div class="review-card">
             <div class="review-header">
@@ -444,7 +525,7 @@
       
       <div class="menu-header">
         <h2>The Terotale Grand Menu</h2>
-        <p style="color:#e67e22; font-weight:600;">Inspired by Taj Mahal Palace • Pure Veg</p>
+        <p style="color:#d4af37; font-size:0.9rem; margin-top:4px;">Inspired by Royal Dining • Pure Veg</p>
       </div>
 
       <div class="menu-category-title">👑 Heritage Starters</div>
@@ -549,7 +630,7 @@
       document.getElementById('reviewerName').value = '';
       document.getElementById('reviewerComment').value = '';
       setRating(5);
-      alert('Thank you! Review submitted successfully.');
+      alert('Thank you! Your review has been submitted.');
     }
   </script>
 
