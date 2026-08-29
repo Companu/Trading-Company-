@@ -1,605 +1,654 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>The Terotale - Royal Pure Veg Fine Dining</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>THE TEROTALE | Pure-Veg Fine Dining in Nashik</title>
+<meta name="description" content="THE TEROTALE — Nashik's address for pure-vegetarian fine dining. Tandoor kebabs, smoking sizzlers, wood-fired pizzas, Chinese, mocktails and plated desserts. Opposite City Centre Mall, Parijat Nagar. Rated 4.7 on Google." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A2620;
+    --forest:#0F3229;
+    --forest-2:#123B2E;
+    --cream:#F3EEE1;
+    --cream-dim:#CFC8B4;
+    --brass:#C89A54;
+    --brass-bright:#E0B876;
+    --ember:#C1552B;
+    --sage:#8FA687;
+    --line: rgba(243,238,225,0.14);
+    --radius: 2px;
+    --maxw: 1180px;
+  }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-      -webkit-tap-highlight-color: transparent;
-    }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--cream);
+    font-family:'Manrope', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  section{position:relative;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
 
-    body {
-      background-color: #080f0a;
-      color: #e5e7eb;
-      overflow-x: hidden;
-    }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:450;
+    letter-spacing:-0.01em;
+    color:var(--cream);
+  }
 
-    /* Taj Top Bar */
-    .top-bar {
-      background: #040805;
-      color: #c5a059;
-      padding: 8px 20px;
-      font-size: 0.75rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-align: center;
-      border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-    }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--brass-bright);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--brass);
+    display:inline-block;
+  }
 
-    /* Header */
-    header {
-      background: rgba(8, 15, 10, 0.95);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:15px 30px;
+    font-family:'Manrope', sans-serif;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:0.02em;
+    border:1px solid transparent;
+    border-radius:var(--radius);
+    cursor:pointer;
+    transition:transform .35s ease, background .35s ease, border-color .35s ease, color .35s ease;
+  }
+  .btn-primary{
+    background:var(--brass);
+    color:var(--ink);
+  }
+  .btn-primary:hover{background:var(--brass-bright); transform:translateY(-2px);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--cream);
+    border-color:var(--line);
+  }
+  .btn-ghost:hover{border-color:var(--brass); color:var(--brass-bright); transform:translateY(-2px);}
 
-    .brand-logo {
-      font-family: 'Cinzel', serif;
-      font-size: 1.6rem;
-      color: #c5a059;
-      letter-spacing: 3px;
-      font-weight: 700;
-      text-decoration: none;
-      text-transform: uppercase;
-      animation: goldGlow 3s ease-in-out infinite alternate;
-    }
+  /* ---------- reduced motion ---------- */
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
 
-    @keyframes goldGlow {
-      0% { text-shadow: 0 0 5px rgba(197, 160, 89, 0.2); }
-      100% { text-shadow: 0 0 18px rgba(197, 160, 89, 0.8); }
-    }
+  /* ---------- focus ---------- */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--brass-bright);
+    outline-offset:3px;
+  }
 
-    .btn-reserve-top {
-      border: 1px solid #c5a059;
-      color: #c5a059;
-      background: transparent;
-      padding: 8px 16px;
-      border-radius: 2px;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      cursor: pointer;
-      touch-action: manipulation;
-    }
+  /* ================= NAV ================= */
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    padding:22px 0;
+    transition:background .4s ease, padding .4s ease, box-shadow .4s ease;
+  }
+  header.scrolled{
+    background:rgba(10,38,32,0.92);
+    backdrop-filter:blur(10px);
+    padding:14px 0;
+    box-shadow:0 1px 0 var(--line);
+  }
+  header .wrap{display:flex; align-items:center; justify-content:space-between;}
+  .logo{
+    display:flex; align-items:center; gap:12px;
+    font-family:'Fraunces', serif;
+    font-size:20px;
+    letter-spacing:0.02em;
+  }
+  .logo .mark{
+    width:34px; height:34px;
+    border:1px solid var(--brass);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--brass-bright);
+    font-size:15px;
+  }
+  nav.links{display:flex; align-items:center; gap:34px;}
+  nav.links a{
+    font-size:13px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--cream-dim);
+    position:relative;
+    padding-bottom:4px;
+  }
+  nav.links a::after{
+    content:"";
+    position:absolute; left:0; bottom:0;
+    width:0; height:1px;
+    background:var(--brass-bright);
+    transition:width .3s ease;
+  }
+  nav.links a:hover{color:var(--cream);}
+  nav.links a:hover::after{width:100%;}
+  .nav-cta{display:flex; align-items:center; gap:18px;}
+  .menu-toggle{display:none; background:none; border:none; color:var(--cream); font-size:24px; cursor:pointer;}
 
-    /* Hero Section */
-    .hero-container {
-      position: relative;
-      height: 75vh;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+  @media (max-width: 860px){
+    nav.links{
+      position:fixed; inset:0 0 0 30%;
+      background:var(--forest-2);
+      flex-direction:column;
+      justify-content:center;
+      gap:28px;
+      transform:translateX(100%);
+      transition:transform .45s ease;
+      border-left:1px solid var(--line);
     }
+    nav.links.open{transform:translateX(0);}
+    nav.links a{font-size:16px;}
+    .nav-cta .btn-ghost{display:none;}
+    .menu-toggle{display:block;}
+  }
 
-    .hero-video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: 1;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      opacity: 0.45;
-    }
+  /* ================= HERO ================= */
+  .hero{
+    min-height:100svh;
+    display:flex;
+    align-items:center;
+    padding-top:110px;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% 0%, rgba(200,154,84,0.12), transparent 60%),
+      linear-gradient(180deg, var(--ink) 0%, #0B2B23 60%, var(--ink) 100%);
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.7fr;
+    gap:60px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+  }
+  .hero h1{
+    font-size:clamp(44px, 6.4vw, 84px);
+    line-height:0.98;
+    margin:22px 0 26px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--brass-bright);
+  }
+  .hero p.lede{
+    font-size:17px;
+    color:var(--cream-dim);
+    max-width:46ch;
+    margin-bottom:34px;
+  }
+  .hero-cta{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:40px;}
+  .hero-meta{
+    display:flex; gap:28px; flex-wrap:wrap;
+    padding-top:26px;
+    border-top:1px solid var(--line);
+  }
+  .hero-meta div{font-size:13px; color:var(--cream-dim);}
+  .hero-meta strong{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:22px;
+    color:var(--brass-bright);
+    font-weight:450;
+  }
 
-    .hero-overlay {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 0 20px;
-      max-width: 850px;
-      animation: fadeInUp 1.2s ease-out;
-    }
+  /* smoke / plate visual */
+  .hero-visual{
+    position:relative;
+    height:560px;
+    display:flex; align-items:flex-end; justify-content:center;
+  }
+  .tandoor{
+    position:relative;
+    width:230px; height:230px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #3a1c12, var(--ink) 70%);
+    border:1px solid rgba(200,154,84,0.35);
+    box-shadow:0 0 90px rgba(193,85,43,0.25), inset 0 0 40px rgba(0,0,0,0.6);
+    margin-bottom:40px;
+  }
+  .tandoor::before{
+    content:"";
+    position:absolute; inset:34px;
+    border-radius:50%;
+    background:radial-gradient(circle at 50% 60%, #E77A3E, #7A2A12 65%, transparent 70%);
+    filter:blur(1px);
+    opacity:0.85;
+  }
+  .smoke{position:absolute; bottom:210px; left:50%; width:200px; height:340px; transform:translateX(-50%); pointer-events:none;}
+  .smoke svg{width:100%; height:100%; overflow:visible;}
+  .smoke path{
+    fill:none;
+    stroke:var(--cream);
+    stroke-width:2;
+    opacity:0;
+    stroke-linecap:round;
+    animation:rise 7s ease-in infinite;
+  }
+  .smoke path:nth-child(2){animation-delay:1.6s;}
+  .smoke path:nth-child(3){animation-delay:3.2s;}
+  .smoke path:nth-child(4){animation-delay:4.8s;}
+  @keyframes rise{
+    0%{opacity:0; transform:translateY(20px) scale(0.9);}
+    12%{opacity:0.28;}
+    75%{opacity:0.12;}
+    100%{opacity:0; transform:translateY(-220px) scale(1.5);}
+  }
+  .rating-chip{
+    position:absolute; top:18px; right:-6px;
+    background:var(--forest-2);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px 18px;
+    display:flex; align-items:center; gap:10px;
+    box-shadow:0 14px 34px rgba(0,0,0,0.4);
+  }
+  .rating-chip .num{font-family:'Fraunces', serif; font-size:26px; color:var(--brass-bright);}
+  .rating-chip .sub{font-size:11px; color:var(--cream-dim); letter-spacing:0.05em; text-transform:uppercase; line-height:1.4;}
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  @media (max-width:960px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-visual{height:380px; order:-1;}
+    .tandoor{width:170px; height:170px;}
+  }
 
-    .hero-subtitle {
-      font-size: 0.85rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: #c5a059;
-      margin-bottom: 10px;
-    }
+  /* ================= MARQUEE DIVIDER ================= */
+  .marquee{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+    background:var(--forest);
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  .marquee .track{
+    display:inline-flex;
+    animation:scroll-left 32s linear infinite;
+  }
+  .marquee span{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:20px;
+    color:var(--cream-dim);
+    padding:0 28px;
+    display:inline-flex;
+    align-items:center;
+    gap:28px;
+  }
+  .marquee span::after{content:"◆"; font-size:9px; color:var(--brass); font-style:normal;}
+  @keyframes scroll-left{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
 
-    .hero-title {
-      font-family: 'Cinzel', serif;
-      font-size: 2.5rem;
-      color: #ffffff;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      line-height: 1.2;
-    }
+  /* ================= SECTION HEADERS ================= */
+  .section{padding:120px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:64px;
+  }
+  .section-head h2{
+    font-size:clamp(32px, 4vw, 48px);
+    margin-top:16px;
+  }
+  .section-head p{color:var(--cream-dim); margin-top:18px; font-size:16px;}
+  .section-alt{background:var(--forest);}
 
-    .hero-btns {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 25px;
-    }
+  /* ================= ABOUT ================= */
+  .about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:start;
+  }
+  .about-copy p{color:var(--cream-dim); margin-bottom:18px; max-width:52ch;}
+  .stat-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .stat{
+    background:var(--ink);
+    padding:30px 26px;
+  }
+  .stat strong{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:34px;
+    color:var(--brass-bright);
+    font-weight:450;
+  }
+  .stat span{font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:var(--cream-dim);}
 
-    .btn-taj-gold {
-      background: #c5a059;
-      color: #080f0a;
-      padding: 14px 28px;
-      border: 1px solid #c5a059;
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      touch-action: manipulation;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
+  @media (max-width:860px){ .about{grid-template-columns:1fr;} }
 
-    .btn-taj-gold:active {
-      transform: scale(0.96);
-    }
+  /* ================= MENU ================= */
+  .menu-tabs{
+    display:flex; gap:10px; flex-wrap:wrap;
+    margin-bottom:54px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:0;
+  }
+  .menu-tab{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--cream-dim);
+    background:none;
+    border:none;
+    padding:14px 6px;
+    margin-right:22px;
+    cursor:pointer;
+    position:relative;
+    transition:color .3s ease;
+  }
+  .menu-tab::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:-1px;
+    height:2px; background:var(--brass-bright);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .3s ease;
+  }
+  .menu-tab.active{color:var(--brass-bright);}
+  .menu-tab.active::after{transform:scaleX(1);}
 
-    .btn-taj-outline {
-      background: transparent;
-      color: #ffffff;
-      padding: 14px 28px;
-      border: 1px solid #ffffff;
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      touch-action: manipulation;
-    }
+  .menu-panel{display:none;}
+  .menu-panel.active{display:block; animation:fadein .5s ease;}
+  @keyframes fadein{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
 
-    /* Content Area */
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 18px;
-    }
+  .menu-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0 60px;
+  }
+  .menu-item{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .menu-item-top{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  .veg-dot{
+    width:12px; height:12px;
+    border:1.5px solid var(--sage);
+    border-radius:2px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex:none;
+  }
+  .veg-dot::after{content:""; width:6px; height:6px; border-radius:50%; background:var(--sage);}
+  .menu-item h4{
+    font-size:18px;
+    font-weight:450;
+    flex:none;
+  }
+  .leader{
+    flex:1;
+    border-bottom:1px dotted var(--line);
+    height:1px;
+    transform:translateY(-5px);
+  }
+  .price{
+    font-family:'JetBrains Mono', monospace;
+    color:var(--brass-bright);
+    font-size:15px;
+    flex:none;
+  }
+  .menu-item p{
+    font-size:13.5px;
+    color:var(--cream-dim);
+    margin-top:6px;
+    padding-left:22px;
+  }
+  @media (max-width:760px){ .menu-list{grid-template-columns:1fr;} }
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 35px;
-    }
+  .menu-note{
+    margin-top:44px;
+    font-size:13px;
+    color:var(--cream-dim);
+    font-style:italic;
+  }
 
-    .section-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.8rem;
-      color: #ffffff;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+  /* ================= EXPERIENCE / GALLERY ================= */
+  .exp-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .exp-card{
+    background:var(--ink);
+    aspect-ratio:3/4;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    padding:22px;
+  }
+  .exp-card .tex{
+    position:absolute; inset:0;
+    opacity:0.9;
+    transition:transform .6s ease;
+  }
+  .exp-card:hover .tex{transform:scale(1.08);}
+  .exp-card span{
+    position:relative;
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:17px;
+    color:var(--cream);
+    text-shadow:0 2px 10px rgba(0,0,0,0.6);
+  }
+  .exp-card::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 40%, rgba(10,38,32,0.85) 100%);
+  }
+  .t1{background:radial-gradient(circle at 30% 30%, #E77A3E, #7A2A12 70%);}
+  .t2{background:radial-gradient(circle at 60% 40%, var(--sage), #1E3B2E 70%);}
+  .t3{background:radial-gradient(circle at 40% 60%, var(--brass), #3a2c12 70%);}
+  .t4{background:radial-gradient(circle at 50% 50%, #3B6E58, var(--ink) 75%);}
 
-    .gold-divider {
-      width: 50px;
-      height: 1px;
-      background: #c5a059;
-      margin: 12px auto 0;
-    }
+  @media (max-width:860px){ .exp-grid{grid-template-columns:1fr 1fr;} }
 
-    /* Dish Cards */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
+  /* ================= TESTIMONIALS ================= */
+  .testi-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .testi{
+    background:var(--forest);
+    padding:36px 30px;
+  }
+  .testi .stars{color:var(--brass-bright); font-size:13px; letter-spacing:2px; margin-bottom:16px;}
+  .testi p{color:var(--cream); font-size:15px; margin-bottom:20px; font-family:'Fraunces', serif; font-weight:300; font-size:17px; line-height:1.55;}
+  .testi .who{font-size:12px; color:var(--cream-dim); letter-spacing:0.04em; text-transform:uppercase;}
+  @media (max-width:860px){ .testi-grid{grid-template-columns:1fr;} }
 
-    .taj-card {
-      background: #0f1a12;
-      border: 1px solid rgba(197, 160, 89, 0.2);
-      overflow: hidden;
-      transition: transform 0.4s ease;
-    }
+  /* ================= RESERVE BAND ================= */
+  .reserve-band{
+    padding:100px 0;
+    background:linear-gradient(120deg, var(--forest-2), var(--ink));
+    text-align:center;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .reserve-band h2{font-size:clamp(30px,5vw,52px); max-width:16ch; margin:16px auto 30px;}
+  .reserve-band .btn-primary{padding:18px 40px; font-size:15px;}
 
-    .card-img-box {
-      height: 220px;
-      overflow: hidden;
-    }
+  /* ================= CONTACT ================= */
+  .contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+  }
+  .info-list{margin-top:30px;}
+  .info-list li{
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    gap:18px;
+  }
+  .info-list li .k{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--brass-bright);
+    width:110px;
+    flex:none;
+    padding-top:2px;
+  }
+  .info-list li .v{color:var(--cream-dim); font-size:14.5px;}
+  .map-frame{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    height:100%;
+    min-height:340px;
+  }
+  .map-frame iframe{width:100%; height:100%; min-height:340px; border:0; filter:grayscale(0.3) invert(0.92) contrast(0.9);}
+  @media (max-width:860px){ .contact{grid-template-columns:1fr;} }
 
-    .card-img-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .taj-card:hover .card-img-box img {
-      transform: scale(1.08);
-    }
-
-    .card-body {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .card-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.15rem;
-      color: #c5a059;
-      margin-bottom: 6px;
-    }
-
-    /* Mobile Fixed Menu Modal */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.92);
-      backdrop-filter: blur(8px);
-      z-index: 99999;
-      justify-content: center;
-      align-items: center;
-      padding: 15px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .modal-overlay.active {
-      display: flex !important;
-      opacity: 1;
-    }
-
-    .modal-content {
-      background: #0f1a12;
-      border: 1px solid #c5a059;
-      width: 100%;
-      max-width: 750px;
-      max-height: 85vh;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      padding: 25px 18px;
-      position: relative;
-      border-radius: 4px;
-      animation: popIn 0.3s ease-out;
-    }
-
-    @keyframes popIn {
-      from { transform: scale(0.9); }
-      to { transform: scale(1); }
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 35px;
-      color: #c5a059;
-      cursor: pointer;
-      padding: 5px 10px;
-      line-height: 1;
-      touch-action: manipulation;
-    }
-
-    .menu-category-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
-      color: #c5a059;
-      border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-      padding-bottom: 6px;
-      margin: 25px 0 15px;
-      text-transform: uppercase;
-    }
-
-    .modal-food-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
-    }
-
-    .modal-dish-img {
-      width: 65px;
-      height: 65px;
-      object-fit: cover;
-      border: 1px solid #c5a059;
-      flex-shrink: 0;
-    }
-
-    .modal-dish-details {
-      flex-grow: 1;
-    }
-
-    .menu-item-name {
-      font-family: 'Cinzel', serif;
-      color: #ffffff;
-      font-size: 0.9rem;
-    }
-
-    .menu-item-price {
-      color: #c5a059;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    /* Rating Input */
-    .rating-section {
-      background: #0f1a12;
-      border: 1px solid rgba(197, 160, 89, 0.3);
-      padding: 25px 18px;
-      margin-top: 40px;
-    }
-
-    .star-rating-input {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      font-size: 2.5rem;
-      color: #374151;
-      margin: 15px 0;
-    }
-
-    .star-rating-input .star {
-      cursor: pointer;
-      padding: 5px;
-      touch-action: manipulation;
-    }
-
-    .star-rating-input .star.active {
-      color: #c5a059;
-    }
-
-    .review-form input, .review-form textarea {
-      width: 100%;
-      background: #080f0a;
-      border: 1px solid rgba(197, 160, 89, 0.3);
-      color: #fff;
-      padding: 12px;
-      margin-bottom: 12px;
-      font-size: 0.9rem;
-      outline: none;
-    }
-  </style>
+  /* ================= FOOTER ================= */
+  footer{
+    padding:60px 0 30px;
+    border-top:1px solid var(--line);
+  }
+  .foot-top{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+    padding-bottom:44px;
+  }
+  .foot-links{display:flex; gap:70px; flex-wrap:wrap;}
+  .foot-col h5{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--brass-bright);
+    margin-bottom:16px;
+  }
+  .foot-col li{margin-bottom:10px; font-size:14px; color:var(--cream-dim);}
+  .foot-col li a:hover{color:var(--cream);}
+  .foot-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    padding-top:26px; border-top:1px solid var(--line);
+    font-size:12.5px; color:var(--cream-dim);
+  }
+</style>
 </head>
 <body>
 
-  <div class="top-bar">The Terotale • Pure Vegetarian Haven • Nashik</div>
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="#top" class="logo"><span class="mark">TT</span> THE TEROTALE</a>
+    <nav class="links" id="navLinks">
+      <a href="#about">Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#experience">Experience</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#visit" class="btn btn-ghost">Directions</a>
+      <a href="#reserve" class="btn btn-primary">Reserve</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </div>
+</header>
 
-  <header>
-    <a href="#" class="brand-logo">The Terotale</a>
-    <button class="btn-reserve-top" id="menuBtnHeader">Menu</button>
-  </header>
+<main id="top">
 
-  <div class="hero-container">
-    <video class="hero-video" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80">
-      <source src="https://assets.mixkit.co/videos/preview/mixkit-chef-cooking-a-dish-in-a-professional-kitchen-41584-large.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay">
-      <div class="hero-subtitle">Nashik's Luxury Fine Dining</div>
-      <h1 class="hero-title">Royal Vegetarian Elegance</h1>
-      <div class="hero-btns">
-        <button class="btn-taj-gold" id="menuBtnHero">📖 View Grand Menu</button>
-        <a href="https://wa.me/9109130303308" target="_blank" class="btn-taj-outline">💬 Order WhatsApp</a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="eyebrow">Pure Vegetarian &middot; Nashik</span>
+        <h1>Fire, smoke &amp;<br><em>everything green.</em></h1>
+        <p class="lede">Tandoor kebabs, smoking sizzlers and wood-fired pizzas — plated with a fine-dining hand, entirely vegetarian, opposite City Centre Mall in Parijat Nagar.</p>
+        <div class="hero-cta">
+          <a href="#menu" class="btn btn-primary">View the Menu</a>
+          <a href="#reserve" class="btn btn-ghost">Book a Table</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>4.7 / 5</strong>Google Rating</div>
+          <div><strong>100%</strong>Pure Vegetarian</div>
+          <div><strong>6</strong>Live Kitchen Counters</div>
+          <div><strong>Daily</strong>12 PM &ndash; 11 PM</div>
+        </div>
       </div>
+      <div class="hero-visual">
+        <div class="rating-chip"><span class="num">4.7</span><span class="sub">Rated on<br>Google</span></div>
+        <div class="smoke">
+          <svg viewBox="0 0 200 340">
+            <path d="M100 340 C 80 300, 120 270, 95 230 C 70 190, 130 160, 100 120"/>
+            <path d="M90 340 C 110 300, 70 270, 100 225 C 130 185, 75 155, 105 110"/>
+            <path d="M105 340 C 85 295, 125 260, 92 220 C 65 185, 128 150, 98 115"/>
+            <path d="M95 340 C 118 298, 75 265, 105 222 C 132 182, 70 150, 100 118"/>
+          </svg>
+        </div>
+        <div class="tandoor"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Tandoor &amp; Kebabs</span><span>Smoking Sizzlers</span><span>Wood-Fired Pizza</span><span>Indo-Chinese</span><span>Mocktails</span><span>Plated Desserts</span>
+      <span>Tandoor &amp; Kebabs</span><span>Smoking Sizzlers</span><span>Wood-Fired Pizza</span><span>Indo-Chinese</span><span>Mocktails</span><span>Plated Desserts</span>
     </div>
   </div>
 
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Chef's Specials</h2>
-      <div class="gold-divider"></div>
-    </div>
-
-    <div class="grid-3">
-      <div class="taj-card">
-        <div class="card-img-box">
-          <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" alt="Cheese Butter Masala">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Cheese Butter Masala</div>
-        </div>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap about">
+      <div>
+        <span class="eyebrow">Our Story</span>
+        <h2>A kitchen built<br>around restraint.</h2>
       </div>
-
-      <div class="taj-card">
-        <div class="card-img-box">
-          <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80" alt="Paneer Tikka">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Saffron Paneer Tikka</div>
-        </div>
-      </div>
-
-      <div class="taj-card">
-        <div class="card-img-box">
-          <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" alt="Veg Thali">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Royal Special Thali</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="rating-section">
-      <div class="section-header">
-        <h2 class="section-title">Rate Your Experience</h2>
-        <div class="gold-divider"></div>
-      </div>
-
-      <div class="review-form">
-        <div class="star-rating-input" id="starContainer">
-          <span class="star" data-rating="1">★</span>
-          <span class="star" data-rating="2">★</span>
-          <span class="star" data-rating="3">★</span>
-          <span class="star" data-rating="4">★</span>
-          <span class="star" data-rating="5">★</span>
-        </div>
-        <input type="text" id="reviewerName" placeholder="Your Name">
-        <textarea id="reviewerComment" rows="3" placeholder="Share your dining feedback..."></textarea>
-        <button type="button" class="btn-taj-gold" id="submitReviewBtn" style="width: 100%;">Submit Review</button>
-      </div>
-
-      <div style="margin-top: 25px;" id="reviewsContainer">
-        <div style="background:#080f0a; border:1px solid rgba(255,255,255,0.05); padding:15px; margin-top:10px;">
-          <div style="display:flex; justify-content:space-between; color:#c5a059; font-weight:600;">
-            <span>Rahul Sharma</span>
-            <span>★★★★★</span>
-          </div>
-          <div style="font-size:0.85rem; color:#d1d5db; margin-top:5px;">Amazing food quality and atmosphere!</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div id="menuModal" class="modal-overlay">
-    <div class="modal-content">
-      <span class="close-btn" id="closeModalBtn">&times;</span>
+      <div class="about-copy">
+        <p>THE TEROTALE opened with a simple conviction: vegetarian food deserves the same theatre, technique and plating as anything else on a fine-dining table. No compromises, no substitutions — just produce, fire and craft.</p>
+        <p>Every dish leaves one of six live counters: the tandoor, the sizzler plate, the wood-fired oven, the wok, the bar and the dessert pass. Guests watch the smoke before the plate ever arrives.</p>
+        <div class="stat-grid">
       
-      <div style="text-align: center; border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding-bottom: 12px;">
-        <h2 style="font-family:'Cinzel', serif; color:#c5a059; font-size:1.4rem;">The Terotale Menu</h2>
-        <p style="color:#9ca3af; font-size:0.8rem;">Pure Veg Royal Cuisine</p>
-      </div>
-
-      <div class="menu-category-title">👑 Heritage Starters</div>
-      
-      <div class="modal-food-item">
-        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=200&q=80" class="modal-dish-img">
-        <div class="modal-dish-details">
-          <div class="menu-item-name">Saffron Paneer Tikka</div>
-        </div>
-        <div class="menu-item-price">₹1,250</div>
-      </div>
-
-      <div class="modal-food-item">
-        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=200&q=80" class="modal-dish-img">
-        <div class="modal-dish-details">
-          <div class="menu-item-name">Subz Mewa Kebab</div>
-        </div>
-        <div class="menu-item-price">₹1,050</div>
-      </div>
-
-      <div class="menu-category-title">🍲 Main Course</div>
-
-      <div class="modal-food-item">
-        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=200&q=80" class="modal-dish-img">
-        <div class="modal-dish-details">
-          <div class="menu-item-name">Taj Dal Makhani</div>
-        </div>
-        <div class="menu-item-price">₹1,150</div>
-      </div>
-
-      <div class="modal-food-item">
-        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=200&q=80" class="modal-dish-img">
-        <div class="modal-dish-details">
-          <div class="menu-item-name">Paneer Lababdar Grand</div>
-        </div>
-        <div class="menu-item-price">₹1,450</div>
-      </div>
-
-    </div>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var modal = document.getElementById('menuModal');
-      var openBtn1 = document.getElementById('menuBtnHero');
-      var openBtn2 = document.getElementById('menuBtnHeader');
-      var closeBtn = document.getElementById('closeModalBtn');
-
-      function openModal() {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }
-
-      if(openBtn1) openBtn1.addEventListener('click', openModal);
-      if(openBtn2) openBtn2.addEventListener('click', openModal);
-      if(closeBtn) closeBtn.addEventListener('click', closeModal);
-
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-          closeModal();
-        }
-      });
-
-      // Rating Star Handling
-      var currentRating = 5;
-      var stars = document.querySelectorAll('#starContainer .star');
-
-      function updateStars(val) {
-        stars.forEach(function(star) {
-          var rating = parseInt(star.getAttribute('data-rating'));
-          if (rating <= val) {
-            star.classList.add('active');
-          } else {
-            star.classList.remove('active');
-          }
-        });
-      }
-
-      updateStars(5);
-
-      stars.forEach(function(star) {
-        star.addEventListener('click', function() {
-          currentRating = parseInt(this.getAttribute('data-rating'));
-          updateStars(currentRating);
-        });
-      });
-
-      // Submit Review
-      document.getElementById('submitReviewBtn').addEventListener('click', function() {
-        var name = document.getElementById('reviewerName').value.trim();
-        var comment = document.getElementById('reviewerComment').value.trim();
-
-        if (!name || !comment) {
-          alert('Please enter your name and review message.');
-          return;
-        }
-
-        var container = document.getElementById('reviewsContainer');
-        var starStr = '★'.repeat(currentRating) + '☆'.repeat(5 - currentRating);
-
-        var card = document.createElement('div');
-        card.style.cssText = 'background:#080f0a; border:1px solid rgba(255,255,255,0.05); padding:15px; margin-top:10px;';
-        card.innerHTML = '<div style="display:flex; justify-content:space-between; color:#c5a059; font-weight:600;">' +
-                           '<span>' + name + '</span>' +
-                           '<span>' + starStr + '</span>' +
-                         '</div>' +
-                         '<div style="font-size:0.85rem; color:#d1d5db; margin-top:5px;">' + comment + '</div>';
-
-        container.insertBefore(card, container.firstChild);
-        document.getElementById('reviewerName').value = '';
-        document.getElementById('reviewerComment').value = '';
-        updateStars(5);
-        alert('Thank you! Review submitted.');
-      });
-    });
-  </script>
-
-</body>
-</html>
