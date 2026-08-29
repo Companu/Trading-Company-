@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>The Terotale - Taj Luxury Fine Dining & Pure Veg Restaurant</title>
+  <title>The Terotale - Royal Pure Veg Fine Dining</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@
       border-bottom: 1px solid rgba(197, 160, 89, 0.2);
     }
 
-    /* Taj Style Header Navigation */
+    /* Header */
     header {
       background: rgba(8, 15, 10, 0.95);
       backdrop-filter: blur(10px);
@@ -44,7 +44,7 @@
       top: 0;
       z-index: 999;
       border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-      padding: 15px 30px;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -52,50 +52,37 @@
 
     .brand-logo {
       font-family: 'Cinzel', serif;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: #c5a059;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       font-weight: 700;
       text-decoration: none;
       text-transform: uppercase;
+      animation: goldGlow 3s ease-in-out infinite alternate;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: #e5e7eb;
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: #c5a059;
+    @keyframes goldGlow {
+      0% { text-shadow: 0 0 5px rgba(197, 160, 89, 0.2); }
+      100% { text-shadow: 0 0 18px rgba(197, 160, 89, 0.8); }
     }
 
     .btn-reserve-top {
       border: 1px solid #c5a059;
-      color: #c5a059 !important;
-      padding: 8px 18px;
+      color: #c5a059;
+      background: transparent;
+      padding: 8px 16px;
       border-radius: 2px;
-      transition: all 0.3s ease !important;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      touch-action: manipulation;
     }
 
-    .btn-reserve-top:hover {
-      background: #c5a059;
-      color: #080f0a !important;
-    }
-
-    /* Taj Style Video Hero Section */
+    /* Hero Section */
     .hero-container {
       position: relative;
-      height: 80vh;
+      height: 75vh;
       width: 100%;
       display: flex;
       align-items: center;
@@ -122,33 +109,31 @@
       z-index: 2;
       text-align: center;
       padding: 0 20px;
-      max-width: 900px;
+      max-width: 850px;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero-subtitle {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       letter-spacing: 4px;
       text-transform: uppercase;
       color: #c5a059;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .hero-title {
       font-family: 'Cinzel', serif;
-      font-size: 3.2rem;
+      font-size: 2.5rem;
       color: #ffffff;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
       text-transform: uppercase;
       line-height: 1.2;
-    }
-
-    .hero-description {
-      font-size: 1rem;
-      color: #d1d5db;
-      line-height: 1.6;
-      margin-bottom: 30px;
-      font-weight: 300;
     }
 
     .hero-btns {
@@ -156,12 +141,13 @@
       justify-content: center;
       gap: 15px;
       flex-wrap: wrap;
+      margin-top: 25px;
     }
 
     .btn-taj-gold {
       background: #c5a059;
       color: #080f0a;
-      padding: 14px 32px;
+      padding: 14px 28px;
       border: 1px solid #c5a059;
       font-size: 0.85rem;
       letter-spacing: 2px;
@@ -169,18 +155,19 @@
       font-weight: 600;
       text-decoration: none;
       cursor: pointer;
+      touch-action: manipulation;
       transition: all 0.3s ease;
+      display: inline-block;
     }
 
-    .btn-taj-gold:hover {
-      background: transparent;
-      color: #c5a059;
+    .btn-taj-gold:active {
+      transform: scale(0.96);
     }
 
     .btn-taj-outline {
       background: transparent;
       color: #ffffff;
-      padding: 14px 32px;
+      padding: 14px 28px;
       border: 1px solid #ffffff;
       font-size: 0.85rem;
       letter-spacing: 2px;
@@ -188,37 +175,24 @@
       font-weight: 600;
       text-decoration: none;
       cursor: pointer;
-      transition: all 0.3s ease;
+      touch-action: manipulation;
     }
 
-    .btn-taj-outline:hover {
-      border-color: #c5a059;
-      color: #c5a059;
-    }
-
-    /* Section Styling */
+    /* Content Area */
     .container {
       max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
+      margin: 40px auto;
+      padding: 0 18px;
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-subhead {
-      font-size: 0.8rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #c5a059;
-      margin-bottom: 8px;
+      margin-bottom: 35px;
     }
 
     .section-title {
       font-family: 'Cinzel', serif;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       color: #ffffff;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -228,32 +202,26 @@
       width: 50px;
       height: 1px;
       background: #c5a059;
-      margin: 15px auto 0;
+      margin: 12px auto 0;
     }
 
-    /* Culinary Showcase Grid */
+    /* Dish Cards */
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
     .taj-card {
       background: #0f1a12;
       border: 1px solid rgba(197, 160, 89, 0.2);
-      transition: transform 0.4s ease, border-color 0.4s ease;
       overflow: hidden;
-    }
-
-    .taj-card:hover {
-      transform: translateY(-8px);
-      border-color: #c5a059;
+      transition: transform 0.4s ease;
     }
 
     .card-img-box {
-      height: 240px;
+      height: 220px;
       overflow: hidden;
-      position: relative;
     }
 
     .card-img-box img {
@@ -268,174 +236,92 @@
     }
 
     .card-body {
-      padding: 25px;
+      padding: 20px;
       text-align: center;
     }
 
     .card-title {
       font-family: 'Cinzel', serif;
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       color: #c5a059;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-    }
-
-    .card-desc {
-      font-size: 0.85rem;
-      color: #9ca3af;
-      line-height: 1.5;
-    }
-
-    /* Interactive Table Reservation Section */
-    .reservation-box {
-      background: #0f1a12;
-      border: 1px solid rgba(197, 160, 89, 0.3);
-      padding: 40px;
-      margin-top: 50px;
-    }
-
-    .reservation-form {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 25px;
-    }
-
-    .reservation-form input, .reservation-form select {
-      background: #080f0a;
-      border: 1px solid rgba(197, 160, 89, 0.3);
-      color: #fff;
-      padding: 12px 15px;
-      font-size: 0.9rem;
-      outline: none;
-    }
-
-    .reservation-form input:focus, .reservation-form select:focus {
-      border-color: #c5a059;
-    }
-
-    /* Rating & Review Section */
-    .rating-section {
-      background: #0f1a12;
-      border: 1px solid rgba(197, 160, 89, 0.3);
-      padding: 40px;
-      margin-top: 50px;
-    }
-
-    .star-rating-input {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      font-size: 2.8rem;
-      color: #374151;
-      margin: 20px 0;
-      user-select: none;
-    }
-
-    .star-rating-input .star {
-      cursor: pointer;
-      transition: color 0.2s, transform 0.2s;
-    }
-
-    .star-rating-input .star.active {
-      color: #c5a059;
-    }
-
-    .review-form input, .review-form textarea {
-      width: 100%;
-      background: #080f0a;
-      border: 1px solid rgba(197, 160, 89, 0.3);
-      color: #fff;
-      padding: 14px;
-      margin-bottom: 15px;
-      font-size: 0.9rem;
-      outline: none;
-    }
-
-    .review-form input:focus, .review-form textarea:focus {
-      border-color: #c5a059;
-    }
-
-    .review-card {
-      background: #080f0a;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 18px;
-      margin-top: 15px;
-    }
-
-    .review-header {
-      display: flex;
-      justify-content: space-between;
       margin-bottom: 6px;
     }
 
-    .reviewer-name {
-      color: #c5a059;
-      font-weight: 600;
-    }
-
-    .review-stars {
-      color: #c5a059;
-    }
-
-    /* Taj Modal Styling */
+    /* Mobile Fixed Menu Modal */
     .modal-overlay {
       display: none;
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.92);
       backdrop-filter: blur(8px);
-      z-index: 10000;
+      z-index: 99999;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      display: flex !important;
+      opacity: 1;
     }
 
     .modal-content {
       background: #0f1a12;
       border: 1px solid #c5a059;
       width: 100%;
-      max-width: 800px;
+      max-width: 750px;
       max-height: 85vh;
       overflow-y: auto;
-      padding: 35px 25px;
+      -webkit-overflow-scrolling: touch;
+      padding: 25px 18px;
       position: relative;
+      border-radius: 4px;
+      animation: popIn 0.3s ease-out;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.9); }
+      to { transform: scale(1); }
     }
 
     .close-btn {
       position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 30px;
+      top: 10px;
+      right: 15px;
+      font-size: 35px;
       color: #c5a059;
       cursor: pointer;
+      padding: 5px 10px;
+      line-height: 1;
+      touch-action: manipulation;
     }
 
     .menu-category-title {
       font-family: 'Cinzel', serif;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #c5a059;
       border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-      padding-bottom: 8px;
-      margin: 30px 0 15px;
+      padding-bottom: 6px;
+      margin: 25px 0 15px;
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
     .modal-food-item {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
       padding: 12px 0;
       border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
     }
 
     .modal-dish-img {
-      width: 70px;
-      height: 70px;
+      width: 65px;
+      height: 65px;
       object-fit: cover;
       border: 1px solid #c5a059;
       flex-shrink: 0;
@@ -448,71 +334,80 @@
     .menu-item-name {
       font-family: 'Cinzel', serif;
       color: #ffffff;
-      font-size: 0.95rem;
-    }
-
-    .menu-item-desc {
-      font-size: 0.8rem;
-      color: #9ca3af;
-      margin-top: 3px;
+      font-size: 0.9rem;
     }
 
     .menu-item-price {
       color: #c5a059;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
-    footer {
-      background: #040805;
-      border-top: 1px solid rgba(197, 160, 89, 0.2);
-      text-align: center;
-      padding: 30px 20px;
-      color: #6b7280;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
+    /* Rating Input */
+    .rating-section {
+      background: #0f1a12;
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      padding: 25px 18px;
+      margin-top: 40px;
     }
 
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2.2rem; }
-      .nav-links { display: none; }
+    .star-rating-input {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      font-size: 2.5rem;
+      color: #374151;
+      margin: 15px 0;
+    }
+
+    .star-rating-input .star {
+      cursor: pointer;
+      padding: 5px;
+      touch-action: manipulation;
+    }
+
+    .star-rating-input .star.active {
+      color: #c5a059;
+    }
+
+    .review-form input, .review-form textarea {
+      width: 100%;
+      background: #080f0a;
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      color: #fff;
+      padding: 12px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      outline: none;
     }
   </style>
 </head>
 <body>
 
-  <div class="top-bar">The Terotale • Taj Fine Dining Standards • Pure Vegetarian Haven</div>
+  <div class="top-bar">The Terotale • Pure Vegetarian Haven • Nashik</div>
 
   <header>
     <a href="#" class="brand-logo">The Terotale</a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#culinary">Culinary</a>
-      <a href="#reservations">Reservations</a>
-      <a href="javascript:void(0)" onclick="openMenuModal()" class="btn-reserve-top">View Menu</a>
-    </div>
+    <button class="btn-reserve-top" id="menuBtnHeader">Menu</button>
   </header>
 
-  <!-- Video Background Hero Section -->
   <div class="hero-container">
     <video class="hero-video" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80">
       <source src="https://assets.mixkit.co/videos/preview/mixkit-chef-cooking-a-dish-in-a-professional-kitchen-41584-large.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay">
-      <div class="hero-subtitle">Nashik's Premier Luxury Dining</div>
-      <h1 class="hero-title">Experience Royal Elegance</h1>
-      <p class="hero-description">Indulge in an extraordinary pure vegetarian epicurean journey inspired by heritage royal recipes and modern culinary mastery.</p>
+      <div class="hero-subtitle">Nashik's Luxury Fine Dining</div>
+      <h1 class="hero-title">Royal Vegetarian Elegance</h1>
       <div class="hero-btns">
-        <button onclick="openMenuModal()" class="btn-taj-gold">📖 Grand Menu</button>
-        <a href="https://wa.me/9109130303308" target="_blank" class="btn-taj-outline">💬 WhatsApp Order</a>
+        <button class="btn-taj-gold" id="menuBtnHero">📖 View Grand Menu</button>
+        <a href="https://wa.me/9109130303308" target="_blank" class="btn-taj-outline">💬 Order WhatsApp</a>
       </div>
     </div>
   </div>
 
-  <div class="container" id="culinary">
+  <div class="container">
     <div class="section-header">
-      <div class="section-subhead">Epicurean Creations</div>
-      <h2 class="section-title">Signature Dishes</h2>
+      <h2 class="section-title">Chef's Specials</h2>
       <div class="gold-divider"></div>
     </div>
 
@@ -523,7 +418,6 @@
         </div>
         <div class="card-body">
           <div class="card-title">Cheese Butter Masala</div>
-          <div class="card-desc">Rich cashew-gravy infused with royal spices and aged cheese.</div>
         </div>
       </div>
 
@@ -533,7 +427,6 @@
         </div>
         <div class="card-body">
           <div class="card-title">Saffron Paneer Tikka</div>
-          <div class="card-desc">Cottage cheese marinated in Kashmiri saffron & clay oven roasted.</div>
         </div>
       </div>
 
@@ -542,78 +435,50 @@
           <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" alt="Veg Thali">
         </div>
         <div class="card-body">
-          <div class="card-title">Royal Terotale Thali</div>
-          <div class="card-desc">An elaborate multi-course vegetarian feast fit for royalty.</div>
+          <div class="card-title">Royal Special Thali</div>
         </div>
       </div>
     </div>
 
-    <!-- Reservation Section -->
-    <div class="reservation-box" id="reservations">
-      <div class="section-header" style="margin-bottom: 20px;">
-        <div class="section-subhead">Table Booking</div>
-        <h2 class="section-title">Reserve Your Experience</h2>
-        <div class="gold-divider"></div>
-      </div>
-
-      <form class="reservation-form" onsubmit="handleReservation(event)">
-        <input type="text" id="resName" placeholder="Full Name" required>
-        <input type="tel" id="resPhone" placeholder="Phone Number" required>
-        <input type="date" id="resDate" required>
-        <select id="resGuests">
-          <option value="2 Guests">2 Guests</option>
-          <option value="4 Guests">4 Guests</option>
-          <option value="6+ Guests">6+ Family / Group</option>
-        </select>
-        <button type="submit" class="btn-taj-gold" style="grid-column: 1 / -1; width: 100%;">Confirm Table Reservation</button>
-      </form>
-    </div>
-
-    <!-- Reviews & Rating Section -->
     <div class="rating-section">
-      <div class="section-header" style="margin-bottom: 20px;">
-        <div class="section-subhead">Guest Experiences</div>
-        <h2 class="section-title">Leave Your Rating</h2>
+      <div class="section-header">
+        <h2 class="section-title">Rate Your Experience</h2>
         <div class="gold-divider"></div>
       </div>
 
       <div class="review-form">
-        <div class="star-rating-input" id="starInput">
-          <span class="star" onclick="setRating(1)">★</span>
-          <span class="star" onclick="setRating(2)">★</span>
-          <span class="star" onclick="setRating(3)">★</span>
-          <span class="star" onclick="setRating(4)">★</span>
-          <span class="star" onclick="setRating(5)">★</span>
+        <div class="star-rating-input" id="starContainer">
+          <span class="star" data-rating="1">★</span>
+          <span class="star" data-rating="2">★</span>
+          <span class="star" data-rating="3">★</span>
+          <span class="star" data-rating="4">★</span>
+          <span class="star" data-rating="5">★</span>
         </div>
         <input type="text" id="reviewerName" placeholder="Your Name">
         <textarea id="reviewerComment" rows="3" placeholder="Share your dining feedback..."></textarea>
-        <button type="button" onclick="submitReview()" class="btn-taj-gold" style="width: 100%;">Submit Review</button>
+        <button type="button" class="btn-taj-gold" id="submitReviewBtn" style="width: 100%;">Submit Review</button>
       </div>
 
-      <div style="margin-top: 30px;">
-        <h3 style="color:#c5a059; font-family:'Cinzel', serif; font-size:1.1rem; margin-bottom:15px;">Recent Guest Reviews</h3>
-        <div id="reviewsContainer">
-          <div class="review-card">
-            <div class="review-header">
-              <span class="reviewer-name">Rahul Sharma</span>
-              <span class="review-stars">★★★★★</span>
-            </div>
-            <div style="font-size:0.85rem; color:#d1d5db;">Exceptional ambiance and authentic Taj-level service standards in Nashik!</div>
+      <div style="margin-top: 25px;" id="reviewsContainer">
+        <div style="background:#080f0a; border:1px solid rgba(255,255,255,0.05); padding:15px; margin-top:10px;">
+          <div style="display:flex; justify-content:space-between; color:#c5a059; font-weight:600;">
+            <span>Rahul Sharma</span>
+            <span>★★★★★</span>
           </div>
+          <div style="font-size:0.85rem; color:#d1d5db; margin-top:5px;">Amazing food quality and atmosphere!</div>
         </div>
       </div>
     </div>
 
   </div>
 
-  <!-- Full Menu Modal -->
-  <div id="menuModal" class="modal-overlay" onclick="closeMenuModal(event)">
+  <div id="menuModal" class="modal-overlay">
     <div class="modal-content">
-      <span class="close-btn" onclick="toggleModal(false)">&times;</span>
+      <span class="close-btn" id="closeModalBtn">&times;</span>
       
-      <div style="text-align: center; border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding-bottom: 15px;">
-        <h2 style="font-family:'Cinzel', serif; color:#c5a059; font-size:1.6rem;">The Terotale Menu</h2>
-        <p style="color:#9ca3af; font-size:0.85rem; margin-top:4px;">Pure Vegetarian Royal Delicacies</p>
+      <div style="text-align: center; border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding-bottom: 12px;">
+        <h2 style="font-family:'Cinzel', serif; color:#c5a059; font-size:1.4rem;">The Terotale Menu</h2>
+        <p style="color:#9ca3af; font-size:0.8rem;">Pure Veg Royal Cuisine</p>
       </div>
 
       <div class="menu-category-title">👑 Heritage Starters</div>
@@ -621,8 +486,7 @@
       <div class="modal-food-item">
         <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=200&q=80" class="modal-dish-img">
         <div class="modal-dish-details">
-          <div class="menu-item-name">Saffron & Truffle Paneer Tikka</div>
-          <div class="menu-item-desc">Marinated in Kashmiri saffron & organic truffle oil</div>
+          <div class="menu-item-name">Saffron Paneer Tikka</div>
         </div>
         <div class="menu-item-price">₹1,250</div>
       </div>
@@ -630,19 +494,17 @@
       <div class="modal-food-item">
         <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=200&q=80" class="modal-dish-img">
         <div class="modal-dish-details">
-          <div class="menu-item-name">Subz Mewa Dahi Ke Kebab</div>
-          <div class="menu-item-desc">Hung curd kebabs stuffed with toasted pistachios</div>
+          <div class="menu-item-name">Subz Mewa Kebab</div>
         </div>
         <div class="menu-item-price">₹1,050</div>
       </div>
 
-      <div class="menu-category-title">🍲 Signature Main Course</div>
+      <div class="menu-category-title">🍲 Main Course</div>
 
       <div class="modal-food-item">
         <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=200&q=80" class="modal-dish-img">
         <div class="modal-dish-details">
-          <div class="menu-item-name">Taj Signature Dal Makhani</div>
-          <div class="menu-item-desc">Slow cooked for 24 hours over charcoal</div>
+          <div class="menu-item-name">Taj Dal Makhani</div>
         </div>
         <div class="menu-item-price">₹1,150</div>
       </div>
@@ -650,8 +512,7 @@
       <div class="modal-food-item">
         <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=200&q=80" class="modal-dish-img">
         <div class="modal-dish-details">
-          <div class="menu-item-name">Paneer Lababdar Grand Taj</div>
-          <div class="menu-item-desc">Rich tomato velvet gravy garnished with edible 24k gold foil</div>
+          <div class="menu-item-name">Paneer Lababdar Grand</div>
         </div>
         <div class="menu-item-price">₹1,450</div>
       </div>
@@ -659,58 +520,86 @@
     </div>
   </div>
 
-  <footer>
-    <p>© The Terotale Restaurant, Nashik. All Rights Reserved. Inspired by Royal Taj Standards.</p>
-  </footer>
-
   <script>
-    function openMenuModal() {
-      document.getElementById('menuModal').style.display = 'flex';
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var modal = document.getElementById('menuModal');
+      var openBtn1 = document.getElementById('menuBtnHero');
+      var openBtn2 = document.getElementById('menuBtnHeader');
+      var closeBtn = document.getElementById('closeModalBtn');
 
-    function toggleModal(show) {
-      document.getElementById('menuModal').style.display = show ? 'flex' : 'none';
-    }
-
-    function closeMenuModal(event) {
-      if (event.target.id === 'menuModal') {
-        toggleModal(false);
+      function openModal() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
       }
-    }
 
-    function handleReservation(e) {
-      e.preventDefault();
-      var name = document.getElementById('resName').value;
-      var date = document.getElementById('resDate').value;
-      alert('Thank you ' + name + '! Your table reservation request for ' + date + ' has been received.');
-    }
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
 
-    var currentRating = 5;
+      if(openBtn1) openBtn1.addEventListener('click', openModal);
+      if(openBtn2) openBtn2.addEventListener('click', openModal);
+      if(closeBtn) closeBtn.addEventListener('click', closeModal);
 
-    function setRating(val) {
-      currentRating = val;
-      var stars = document.querySelectorAll('#starInput .star');
-      for (var i = 0; i < stars.length; i++) {
-        if (i < val) {
-          stars[i].classList.add('active');
-        } else {
-          stars[i].classList.remove('active');
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
         }
+      });
+
+      // Rating Star Handling
+      var currentRating = 5;
+      var stars = document.querySelectorAll('#starContainer .star');
+
+      function updateStars(val) {
+        stars.forEach(function(star) {
+          var rating = parseInt(star.getAttribute('data-rating'));
+          if (rating <= val) {
+            star.classList.add('active');
+          } else {
+            star.classList.remove('active');
+          }
+        });
       }
-    }
 
-    setRating(5);
+      updateStars(5);
 
-    function submitReview() {
-      var name = document.getElementById('reviewerName').value.trim();
-      var comment = document.getElementById('reviewerComment').value.trim();
+      stars.forEach(function(star) {
+        star.addEventListener('click', function() {
+          currentRating = parseInt(this.getAttribute('data-rating'));
+          updateStars(currentRating);
+        });
+      });
 
-      if (!name || !comment) {
-        alert('Please complete all review fields.');
-        return;
-      }
+      // Submit Review
+      document.getElementById('submitReviewBtn').addEventListener('click', function() {
+        var name = document.getElementById('reviewerName').value.trim();
+        var comment = document.getElementById('reviewerComment').value.trim();
 
-      var container = document.getElementById('reviewsContainer');
-      var starStr = '';
-      for (var i = 1; i <= 5; i++) {
-        starStr += (i <= c
+        if (!name || !comment) {
+          alert('Please enter your name and review message.');
+          return;
+        }
+
+        var container = document.getElementById('reviewsContainer');
+        var starStr = '★'.repeat(currentRating) + '☆'.repeat(5 - currentRating);
+
+        var card = document.createElement('div');
+        card.style.cssText = 'background:#080f0a; border:1px solid rgba(255,255,255,0.05); padding:15px; margin-top:10px;';
+        card.innerHTML = '<div style="display:flex; justify-content:space-between; color:#c5a059; font-weight:600;">' +
+                           '<span>' + name + '</span>' +
+                           '<span>' + starStr + '</span>' +
+                         '</div>' +
+                         '<div style="font-size:0.85rem; color:#d1d5db; margin-top:5px;">' + comment + '</div>';
+
+        container.insertBefore(card, container.firstChild);
+        document.getElementById('reviewerName').value = '';
+        document.getElementById('reviewerComment').value = '';
+        updateStars(5);
+        alert('Thank you! Review submitted.');
+      });
+    });
+  </script>
+
+</body>
+</html>
