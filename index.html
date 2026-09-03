@@ -6,7 +6,6 @@
 <title>Pratibha Clinic | Dr. Neelam Jain & Dr. Nemichand Jain — Panchavati, Nashik</title>
 <meta name="description" content="Pratibha Clinic, Panchavati Nashik — Gynaecology, Obstetrics & Family Care by Dr. Neelam Jain and Dr. Nemichand Jain. Reg. No. 51719.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -80,6 +79,7 @@
     transition:background .25s ease, transform .25s ease;
   }
   .nav-call:hover{background:var(--blush); transform:translateY(-1px);}
+  .menu-hide{display:none;}
   @media(max-width:760px){
     nav.links{display:none;}
   }
@@ -132,7 +132,6 @@
   }
   .btn-ghost:hover{background:var(--teal-deep); color:#fff;}
 
-  /* Desktop Rating Row */
   .rating-row{
     display:flex; align-items:center; gap:10px; margin-top:34px;
     opacity:0; animation:fadeUp .8s ease .85s forwards;
@@ -164,40 +163,11 @@
   }
   .badge-float .num{font-family:'Fraunces',serif; font-size:1.6rem; color:var(--teal-deep); font-weight:600;}
   .badge-float .label{font-size:0.78rem; color:#5b716d; line-height:1.3; max-width:14ch;}
-
-  /* Mobile Rating Banner */
-  .mobile-rating-card {
-    display: none;
-    background: var(--paper);
-    border: 1px solid rgba(11,74,68,0.12);
-    border-radius: 12px;
-    padding: 14px 18px;
-    margin-top: 24px;
-    box-shadow: 0 8px 20px -6px rgba(11,74,68,0.15);
-  }
-  .mobile-rating-card .top-line {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 6px;
-  }
-  .mobile-rating-card .score {
-    font-weight: 700;
-    color: var(--teal-deep);
-    font-size: 1.1rem;
-  }
-  .mobile-rating-card .subtext {
-    font-size: 0.82rem;
-    color: #5b716d;
-  }
-
   @media(max-width:900px){
     .hero-grid{grid-template-columns:1fr; gap:40px;}
     .hero-photo{order:-1;}
     .hero-photo .frame img{height:280px;}
     .badge-float{left:12px; bottom:-18px; padding:12px 16px;}
-    .rating-row {display: none;}
-    .mobile-rating-card {display: block;}
   }
 
   /* ---------- TRUST STRIP ---------- */
@@ -381,91 +351,10 @@
         <a class="btn-primary" href="tel:+919823671141">Call &amp; Book a Visit</a>
         <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Pratibha+Clinic+Brijpark+Apartment+Makhmalabad+Naka+Panchavati+Nashik" target="_blank" rel="noopener">Get Directions</a>
       </div>
-      
-      <!-- Desktop Rating Display -->
       <div class="rating-row">
         <span class="stars">★★★★★</span>
-        <span><b>5.0</b> on Google Reviews · 8 patient reviews · Reg. No. 51719</span>
-      </div>
-
-      <!-- Mobile Rating Display -->
-      <div class="mobile-rating-card">
-        <div class="top-line">
-          <span class="stars">★★★★★</span>
-          <span class="score">5.0 / 5.0</span>
-        </div>
-        <div class="subtext">Based on 8 Google Patient Reviews · Reg. No. 51719</div>
+        <span><b>5.0</b> on Google · 8 patient reviews · Reg. No. 51719</span>
       </div>
     </div>
     <div class="hero-photo">
-      <div class="frame">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Pratibha Clinic Care Environment">
-      </div>
-      <div class="badge-float">
-        <div class="num">15+</div>
-        <div class="label">Years of trusted medical service</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Trust Strip / Quick Details for PC & Mobile -->
-<div class="trust-strip">
-  <div class="wrap trust-inner">
-    <div class="trust-item"><span class="dot"></span> <b>5.0 Rating</b> (Google Verified)</div>
-    <div class="trust-item"><span class="dot"></span> <b>Reg. No. 51719</b> (Registered Clinic)</div>
-    <div class="trust-item"><span class="dot"></span> <b>Dr. Neelam Jain</b> (Gynaecology &amp; Obstetrics)</div>
-    <div class="trust-item"><span class="dot"></span> <b>Dr. Nemichand Jain</b> (General Physician)</div>
-  </div>
-</div>
-
-<section class="section" id="doctors">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">OUR SPECIALISTS</span>
-      <h2>Experienced Doctors Who Truly Listen</h2>
-      <p>Dedicated medical professionals delivering compassionate care for women, mothers, and families in Panchavati, Nashik.</p>
-    </div>
-    <div class="doctor-grid">
-      <div class="doctor-card">
-        <span class="tag">Gynaecology &amp; Obstetrics</span>
-        <h3>Dr. Neelam Jain</h3>
-        <div class="role">Specialist Gynaecologist &amp; Obstetrician</div>
-        <p>Comprehensive care for pregnancy, ANC checkups, PCOD/PCOS, fertility guidance, high-risk pregnancy, and personalized women's health wellness.</p>
-        <div class="reg">Medical Registration No. 51719</div>
-      </div>
-      <div class="doctor-card">
-        <span class="tag">General &amp; Family Medicine</span>
-        <h3>Dr. Nemichand Jain</h3>
-        <div class="role">General Physician &amp; Family Medicine</div>
-        <p>Complete family medical healthcare including diabetes management, hypertension, viral fever, seasonal illness, and general health checkups.</p>
-        <div class="reg">Practicing Family Physician in Nashik</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section services-band" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">WHAT WE OFFER</span>
-      <h2>Comprehensive Medical Services</h2>
-      <p>Expert diagnosis, treatment, and preventive healthcare under one roof.</p>
-    </div>
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="icn">
-          <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        </div>
-        <h4>Antenatal Care (ANC)</h4>
-        <p>Routine maternal checkups, fetal monitoring, and nutritional advice for healthy pregnancies.</p>
-      </div>
-      <div class="service-card">
-        <div class="icn">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h4>Gynaecological Care</h4>
-        <p>Expert treatment for PCOD/PCOS, menstrual irregularities, infections, and hormonal wellness.</p>
-      </div>
-      <div class="service-card">
-        
+      <div class="frame"><img src="data:image/jpeg;base64,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
